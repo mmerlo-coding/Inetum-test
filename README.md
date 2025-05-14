@@ -98,3 +98,25 @@ src/
 Las decisiones de arquitectura y diseño se tomaron basandome en las necesidades del proyecto y las caracteristicas de el test dado, trate de cumplir con las reglas los mas cerca posible y evitar usar tecnologias que no fueran necesarias.
 
 La mayoria de los components estan completamente customizados y creados desde cero, exceptuando los componentes de UI que estan basados en componentes de `lucide-react` para iconos.
+
+### Como correr los tests
+
+Una vez instaladas las dependencias, puedes correr los tests que estan en el directorio `__tests__` con el siguiente comando:
+
+Con `pnpm`:
+
+```bash
+pnpm test
+```
+
+Con `npm`:
+
+```bash
+npm run test
+```
+
+Con `yarn`:
+
+```bash
+yarn test
+```
