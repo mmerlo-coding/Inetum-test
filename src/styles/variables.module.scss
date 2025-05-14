@@ -1,5 +1,23 @@
-$background: #ffffff;
+//global variables
+$background: #efeeea;
 $foreground: #171717;
+$primary: #fe7743;
+$primary-foreground: #171717;
+$secondary: #273f4f;
+$secondary-foreground: #fff;
 
-$primary: #000000;
-$secondary: #171717;
+//sidebar variables
+$sidebar-width: 250px;
+$sidebar-bg-light: #fe7743;
+$text-color-light: #fff;
+$primary-accent-color: #fe7743;
+$transition-duration: 0.2s;
+$mobile-breakpoint: 768px;
+
+//table variables
+$border-color: #e5e7eb;
+$header-bg-light: #f9fafb;
+$text-color-primary-light: #111827;
+$text-color-secondary-light: #6b7280;
+$button-bg-hover-light: #f3f4f6;
+$button-disabled-opacity: 0.6;

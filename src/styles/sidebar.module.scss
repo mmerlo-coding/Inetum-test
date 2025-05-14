@@ -1,0 +1,101 @@
+@import "./variables.module.scss";
+
+.mobileMenuButtonContainer {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+
+  @media (max-width: ($mobile-breakpoint - 1px)) {
+    display: block;
+  }
+}
+
+.mobileMenuButton {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: $primary-foreground;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: $sidebar-width;
+  background-color: $sidebar-bg-light;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); // shadow-lg
+  transition: transform $transition-duration ease-in-out;
+  position: fixed;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  z-index: 40;
+  height: 100vh;
+
+  &.sidebarClosed {
+    @media (max-width: ($mobile-breakpoint - 1px)) {
+      transform: translateX(-100%);
+    }
+  }
+
+  &.sidebarOpen {
+    @media (max-width: ($mobile-breakpoint - 1px)) {
+      transform: translateX(0);
+    }
+  }
+
+  // Desktop styles
+  @media (min-width: $mobile-breakpoint) {
+    position: static;
+    transform: translateX(0);
+    box-shadow: none;
+  }
+}
+
+.sidebarContentWrapper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-color-light;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebarNav {
+  flex-grow: 1;
+
+  Link,
+  a {
+    margin-bottom: 0.5rem;
+    color: $text-color-light;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background-color: #f3f4f6;
+      border-radius: 0.375rem;
+      color: $primary-accent-color;
+      transition: background-color $transition-duration ease-in-out;
+    }
+  }
+}
+
+.mobileOverlay {
+  display: none;
+
+  @media (max-width: ($mobile-breakpoint - 1px)) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+}

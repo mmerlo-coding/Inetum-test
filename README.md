@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Primeros Pasos (En Español)
 
-## Getting Started
+Sigue estos pasos para poner en marcha el proyecto en tu entorno local.
 
-First, run the development server:
+### Prerrequisitos
+
+Asegúrate de tener instalado [Node.js](https://nodejs.org/) (se recomienda la versión LTS o superior).
+Este proyecto utiliza `npm` como gestor de paquetes preferido.
+
+### Instalación de Dependencias
+
+1.  Clona el repositorio (si aún no lo has hecho):
+
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd <NOMBRE_DEL_DIRECTORIO_DEL_PROYECTO>
+    ```
+
+2.  Instala las dependencias del proyecto. Elige el comando según tu gestor de paquetes:
+
+    Con `npm`(recomendado):
+
+    ```bash
+    npm install
+    ```
+
+    Con `pnpm` (recomendado):
+
+    ```bash
+    pnpm install
+    ```
+
+    Con `yarn`:
+
+    ```bash
+    yarn install
+    ```
+
+### Ejecutar el Servidor de Desarrollo
+
+Una vez instaladas las dependencias, puedes iniciar el servidor de desarrollo:
+
+Con `pnpm`:
+
+```bash
+pnpm dev
+```
+
+Con `npm`:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Con `yarn`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Esto iniciará la aplicación en modo de desarrollo. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-## Learn More
+La página se actualizará automáticamente a medida que edites los archivos. El archivo principal de la página de inicio se encuentra en `app/page.tsx`.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Arquitectura del proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El proyecto se basa en Next.js 15, TypeScript, React, Tanstack Query, Zustand, Lucide, Sass. Las carpetas estan organizadas dentro del directorio `src` y estan las siguientes:
 
-## Deploy on Vercel
+- `app`: Carpeta para las páginas y rutas de la aplicación.
+- `components`: Carpeta para los componentes reutilizables.
+- `constants`: Carpeta para las constantes y configuraciones del proyecto.
+- `server`: Carpeta para las funciones del servidor y para la configuracion de Tanstack Query.
+- `stores`: Carpeta para el contexto global usando Zustand.
+- `styles`: Carpeta para los estilos y hojas de estilo del proyecto con Sass.
+- `types`: Carpeta para los tipos de datos del proyecto.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Al tener las carpetas separadas y organizadas, es mas facil de mantener el proyecto y agregar nuevas funcionalidades.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Estructura de carpetas
+
+La estructura de carpetas del proyecto es la siguiente:
+
+```bash
+src/
+├── app/
+├── components/
+├── constants/
+├── server/
+├── stores/
+├── styles/
+├── types/
+```
+
+## Thinking process y decisiones tomadas
+
+Las decisiones de arquitectura y diseño se tomaron basandome en las necesidades del proyecto y las caracteristicas de el test dado, trate de cumplir con las reglas los mas cerca posible y evitar usar tecnologias que no fueran necesarias.
+
+La mayoria de los components estan completamente customizados y creados desde cero, exceptuando los componentes de UI que estan basados en componentes de `lucide-react` para iconos.

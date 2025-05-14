@@ -1,0 +1,6 @@
+@import "./variables.module.scss";
+.pageLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

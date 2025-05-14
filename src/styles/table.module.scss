@@ -1,0 +1,107 @@
+@import "./variables.module.scss";
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto; // For responsiveness if table content is too wide
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem; // text-sm
+  color: $text-color-primary-light;
+  @media (max-width: ($mobile-breakpoint - 1px)) {
+    width: 665px;
+  }
+}
+
+.headerRow {
+  background-color: $header-bg-light;
+}
+
+.tableRow {
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.tableHeaderCell,
+.tableCell {
+  padding: 1.2rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.tableHeaderCell {
+  font-weight: 600;
+  color: $text-color-secondary-light;
+  text-transform: capitalize;
+}
+
+.message {
+  padding: 1.5rem;
+  text-align: center;
+  color: $text-color-secondary-light;
+  font-size: 1rem;
+}
+
+// --- Pagination ---
+.paginationControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paginationButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $text-color-primary-light;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    background-color: $button-bg-hover-light;
+  }
+
+  &:disabled {
+    opacity: $button-disabled-opacity;
+    cursor: not-allowed;
+  }
+
+  svg {
+    display: inline-block;
+  }
+}
+
+.Link {
+  background-color: $primary;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  color: $background;
+}
+
+.noUserSelected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+}
+.paginationInfo {
+  font-size: 0.875rem;
+  color: $text-color-secondary-light;
+}

@@ -1,22 +1,22 @@
+"use client";
+
 import PageLayout from "@/components/page-layout";
 import { getQueryClient } from "@/server/get-query-client";
 import { usersOptions } from "@/server/get-users";
-import { dehydrate } from "@tanstack/react-query";
-import { HydrationBoundary } from "@tanstack/react-query";
-import UsersList from "@/components/users-list";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import UserProfile from "@/components/user-profile";
 
-const Home = () => {
+const UserProfilePage = () => {
   const queryClient = getQueryClient();
 
   void queryClient.prefetchQuery(usersOptions);
-
   return (
-    <PageLayout title="Lista de usuarios">
+    <PageLayout title={`Informacion de usuario y tareas`}>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <UsersList />
+        <UserProfile />
       </HydrationBoundary>
     </PageLayout>
   );
 };
 
-export default Home;
+export default UserProfilePage;

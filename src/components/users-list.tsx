@@ -1,0 +1,41 @@
+"use client";
+
+import { usersOptions } from "@/server/get-users";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import React from "react";
+import DynamicTable, { DynamicColumn } from "./table";
+import { User } from "@/types/user-type";
+import styles from "@/styles/table.module.scss";
+import { useUserStore } from "@/stores/user-store";
+import Link from "next/link";
+
+const UsersList = () => {
+  const { data: usersData } = useSuspenseQuery(usersOptions);
+  const setSelectedUser = useUserStore((state) => state.setSelectedUser);
+
+  const formattedRows = usersData.map((user: User) => ({
+    ...user,
+    action: (
+      <Link
+        href={`/todo?userId=${user.id}`}
+        className={styles.Link}
+        onClick={() => {
+          setSelectedUser(user);
+          console.log("Selected user ID:", user.id, "Full User:", user);
+        }}
+      >
+        Ver Tareas
+      </Link>
+    ),
+  }));
+
+  const productColumns: DynamicColumn[] = [
+    { key: "id", header: "ID" },
+    { key: "name", header: "Nombre" },
+    { key: "email", header: "Email" },
+    { key: "action", header: "Acciones" },
+  ];
+  return <DynamicTable columns={productColumns} rows={formattedRows} itemsPerPage={5} />;
+};
+
+export default UsersList;
