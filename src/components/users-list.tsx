@@ -21,7 +21,6 @@ const UsersList = () => {
         className={styles.Link}
         onClick={() => {
           setSelectedUser(user);
-          console.log("Selected user ID:", user.id, "Full User:", user);
         }}
       >
         Ver Tareas

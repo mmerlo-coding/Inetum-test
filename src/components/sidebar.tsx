@@ -16,7 +16,7 @@ export default function Sidebar({ children }: SidebarProps) {
   }
 
   return (
-    <>
+    <nav>
       {/* Mobile Menu Button */}
       <div className={styles.mobileMenuButtonContainer}>
         <button onClick={toggleMobileMenu} className={styles.mobileMenuButton} aria-label="Toggle menu" aria-expanded={isMobileMenuOpen}>
@@ -36,6 +36,6 @@ export default function Sidebar({ children }: SidebarProps) {
 
       {/* Overlay for mobile when menu is open */}
       {isMobileMenuOpen && <div className={styles.mobileOverlay} onClick={toggleMobileMenu} role="button" tabIndex={0} />}
-    </>
+    </nav>
   );
 }

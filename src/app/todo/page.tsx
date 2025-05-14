@@ -1,5 +1,3 @@
-"use client";
-
 import PageLayout from "@/components/page-layout";
 import { getQueryClient } from "@/server/get-query-client";
 import { usersOptions } from "@/server/get-users";
@@ -11,7 +9,7 @@ const UserProfilePage = () => {
 
   void queryClient.prefetchQuery(usersOptions);
   return (
-    <PageLayout title={`Informacion de usuario y tareas`}>
+    <PageLayout title="Informacion de usuario y tareas">
       <HydrationBoundary state={dehydrate(queryClient)}>
         <UserProfile />
       </HydrationBoundary>

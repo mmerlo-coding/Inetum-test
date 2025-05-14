@@ -12,8 +12,8 @@ Este proyecto utiliza `npm` como gestor de paquetes preferido.
 1.  Clona el repositorio (si aún no lo has hecho):
 
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
-    cd <NOMBRE_DEL_DIRECTORIO_DEL_PROYECTO>
+    git clone https://github.com/mmerlo-coding/Inetum-test.git
+    cd <Nombre que le hayas colocado a tu carpeta al clonar el repositorio>
     ```
 
 2.  Instala las dependencias del proyecto. Elige el comando según tu gestor de paquetes:
@@ -24,7 +24,7 @@ Este proyecto utiliza `npm` como gestor de paquetes preferido.
     npm install
     ```
 
-    Con `pnpm` (recomendado):
+    Con `pnpm`:
 
     ```bash
     pnpm install
@@ -49,7 +49,7 @@ pnpm dev
 Con `npm`:
 
 ```bash
-npm run dev
+npm run dev o npm run start
 ```
 
 Con `yarn`:

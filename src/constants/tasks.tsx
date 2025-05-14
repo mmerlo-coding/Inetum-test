@@ -5,12 +5,10 @@ export interface Task {
   id: number;
   title: string;
   status: "Completado" | "No completado";
-  // The 'action' will be generated dynamically in the component
+  // The 'action' will be generated dynamically in the component using the generateTaskAction function
 }
 
 export type ToggleTaskHandler = (taskId: number) => void;
-
-// Initial raw task data
 export const initialRawTasks: Omit<Task, "action">[] = [
   { id: 1, title: "Crear un nuevo proyecto", status: "Completado" },
   { id: 2, title: "Terminar website de la empresa", status: "No completado" },
@@ -20,8 +18,6 @@ export const initialRawTasks: Omit<Task, "action">[] = [
   { id: 6, title: "Hacer un video para Instagram", status: "No completado" },
 ];
 
-// Function to generate the action button JSX for a single task
-// This would typically be called inside the component that manages the tasks state
 export function generateTaskAction(task: Task, onToggleTask: ToggleTaskHandler): React.ReactNode {
   if (task.status === "Completado") {
     return (
