@@ -5,7 +5,6 @@ export interface Task {
   id: number;
   title: string;
   status: "Completado" | "No completado";
-  // The 'action' will be generated dynamically in the component using the generateTaskAction function
 }
 
 export type ToggleTaskHandler = (taskId: number) => void;
